@@ -4,14 +4,15 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   const loadOrders = () => {
-    fetch("http://localhost:5000/api/orders")
+    fetch("https://siparis-backend-uq0l.onrender.com/api/orders")
+
       .then(res => res.json())
       .then(data => setOrders(data));
   };
 
 
   const completeOrder = async (id) => {
-  await fetch(`http://localhost:5000/api/orders/${id}`, {
+  await fetch(`https://siparis-backend-uq0l.onrender.com/api/orders/${id}`, {
     method: "DELETE",
   });
 

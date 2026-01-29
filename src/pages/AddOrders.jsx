@@ -21,7 +21,7 @@ function AddOrder() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/api/orders", {
+    await fetch("https://siparis-backend-uq0l.onrender.com/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
