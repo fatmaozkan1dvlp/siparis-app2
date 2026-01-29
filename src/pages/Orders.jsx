@@ -4,7 +4,8 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   const loadOrders = () => {
-    fetch("https://siparis-backend-uq0l.onrender.com/api/orders")
+    fetch(`${import.meta.env.VITE_API_URL}/api/orders`)
+
 
       .then(res => res.json())
       .then(data => setOrders(data));
@@ -12,7 +13,7 @@ function Orders() {
 
 
   const completeOrder = async (id) => {
-  await fetch(`https://siparis-backend-uq0l.onrender.com/api/orders/${id}`, {
+  await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${id}`, {
     method: "DELETE",
   });
 

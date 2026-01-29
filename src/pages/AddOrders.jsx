@@ -21,7 +21,7 @@ function AddOrder() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("https://siparis-backend-uq0l.onrender.com/api/orders", {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
